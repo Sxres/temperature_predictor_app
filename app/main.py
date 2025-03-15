@@ -7,7 +7,7 @@ import pandas as pd
 model = xgb.Booster()
 model.load_model("xgboost_regressor_model.json")
 
-app = FastAPI()
+app = FastAPI(docs_url="/WeatherPrediction", title="Weather Prediction API", description="API to predict the future temperature based on the year, month and day")
 
 class Weather(BaseModel):
     Year: int = Field(ge=2019)

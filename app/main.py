@@ -4,8 +4,10 @@ from pydantic import BaseModel, Field
 import xgboost as xgb
 import pandas as pd
 
+#use streamlit to make it look nicer and more interactive
+
 model = xgb.Booster()
-model.load_model("xgboost_regressor_model.json")
+model.load_model("xgboost_regressor_modelv2.json")
 
 app = FastAPI(docs_url="/TemperaturePrediction", title="Temperature Prediction API", description="API to predict the future temperature based on the year, month and day")
 

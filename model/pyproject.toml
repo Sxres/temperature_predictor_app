@@ -9,7 +9,7 @@ dependencies = [
     "pandas",
     "jupyterlab",
     "scikit-learn<1.6",
-    "wandb",
+    "matplotlib",
     "shap",
 
 ]

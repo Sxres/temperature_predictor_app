@@ -12,7 +12,7 @@ model.load_model("xgboost_regressor_modelv2.json")
 app = FastAPI(docs_url="/TemperaturePrediction", title="Temperature Prediction API", description="API to predict the future temperature based on the year, month and day")
 
 class Weather(BaseModel):
-    Year: int = Field(ge=2019)
+    Year: int = Field(ge=2011)
     Month: int = Field(ge=1, le=12)
     Day: int = Field(ge=1, le=31)
 

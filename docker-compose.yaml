@@ -6,7 +6,7 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./frontend:/app
+      - ./frontend:/streamlit_frontend
     restart: always
     networks:
       - app

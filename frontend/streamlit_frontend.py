@@ -19,7 +19,7 @@ if "themes" not in ms:
                     "dark":  {"theme.base": "light",
                               "theme.backgroundColor": "white",
                               "theme.primaryColor": "#5591f5",
-                              "theme.secondaryBackgroundColor": "#82E1D7",
+                              "theme.secondaryBackgroundColor": "#edf2f1",
                               "theme.textColor": "#0a1464",
                               "button_face": "🌞"},
                     }
@@ -64,6 +64,6 @@ input_data = {
 #when u click a button then it makes the post request to the backend
 #and gets the response
 if st.button('Predict Future Temperature'): 
-    response = requests.post('http://backend:8080/PredictFutureTemperature', json=input_data)
+    response = requests.post('https://backend-150513265584.us-central1.run.app/PredictFutureTemperature', json=input_data)
     prediction = response.json()
     st.write(f"Predicted Temperature: {prediction.get('Predicted temperature (°C)')}")

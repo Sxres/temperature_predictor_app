@@ -3,16 +3,18 @@ services:
   frontend:
     build: frontend
     ports:
-      - 8501:8501
+      - "8501:8501"
+    environment:
+      - PORT=8501
     depends_on:
       - backend
     volumes:
-      - ./frontend:/streamlit_frontend
+      - ./frontend:/app
     restart: always
     networks:
       - app
     container_name: frontend
-    
+
   backend:
     build: backend
     ports:

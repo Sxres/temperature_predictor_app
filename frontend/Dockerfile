@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8501
 
-ENTRYPOINT ["streamlit", "run", "streamlit_frontend.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT sh -c "streamlit run streamlit_frontend.py --server.port=${PORT:-8501} --server.address=0.0.0.0"

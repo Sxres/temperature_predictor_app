@@ -8,7 +8,7 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Copy model file and application code
-COPY xgboost_regressor_time_model.json .
+COPY xgboost_regressor_time_modelv2.json .
 COPY . .
 
 EXPOSE 8080

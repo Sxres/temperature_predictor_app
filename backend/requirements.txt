@@ -1,8 +1,4 @@
-fastapi
-uvicorn
-numpy
-xgboost
-pandas
-jupyterlab
-python-multipart
-pytest
+fastapi==0.63.0
+uvicorn==0.34.0
+xgboost==2.1.4
+pandas==2.2.0

@@ -4,12 +4,12 @@ import xgboost as xgb
 import pandas as pd
 
 timemodel = xgb.Booster()
-timemodel.load_model("xgboost_regressor_time_model.json")
+timemodel.load_model("xgboost_regressor_time_modelv2.json")
 
 app = FastAPI(docs_url="/TemperaturePrediction", title="Temperature Prediction API", description="API to predict the future temperature based on the year, month and day")
 
 class Weather(BaseModel):
-    Year: int = Field(ge=2011)
+    Year: int = Field(ge=2021)
     Month: int = Field(ge=1, le=12)
     Day: int = Field(ge=1, le=31)
     Time: int = Field(ge=0, le=23)
@@ -18,7 +18,7 @@ class Weather(BaseModel):
 async def predict_future_temperature(weather: Weather):
     future_date = pd.DataFrame({"Year": [weather.Year], "Month": [weather.Month], "Day": [weather.Day], "Time (UTC)": [weather.Time]})
     future_temp = timemodel.predict(xgb.DMatrix(future_date))
-    return {"Predicted temperature (°C)": round(float(future_temp[0]), 1)} # could be bug 
+    return {"Predicted temperature (°C)": round(float(future_temp[0]), 1)} 
 
 
 

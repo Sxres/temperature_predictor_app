@@ -1,13 +1,15 @@
 import streamlit as st 
 import requests
 
-# Create a row with two columns for the title and the button
-col1, col2 = st.columns([8, 1], vertical_alignment="bottom")  # Adjust the column width ratio as needed
+st.set_page_config(page_title="Oshawa Temp Prediction", page_icon="🌡️", layout="centered")
+
+col1, col2 = st.columns([16, 1], vertical_alignment="center", gap="small") 
 
 with col1:
-    st.title('Temperature Prediction')  # Place the title in the first column
-
+    st.title('Oshawa Temperature Prediction')    
+    st.subheader('Predict the temperature in Oshawa, Ontario, Canada')
 with col2:
+    
     # Place the theme change button in the second column
     ms = st.session_state
     if "themes" not in ms: 
@@ -40,7 +42,7 @@ if ms.themes["refreshed"] == False:
     st.rerun()
 
 # Get user input on month, day, and year
-Year = st.number_input('Year', min_value=2011)
+Year = st.number_input('Year', min_value=2021)
 Month = st.number_input('Month', min_value=1, max_value=12)
 Day = st.number_input('Day', min_value=1, max_value=31)
 Time = st.number_input('Time (24 Hour)', min_value=0, max_value=23)
@@ -57,4 +59,4 @@ input_data = {
 if st.button('Predict Future Temperature'): 
     response = requests.post('https://backend-150513265584.us-central1.run.app/PredictFutureTemperature', json=input_data)
     prediction = response.json()
-    st.write(f"Predicted Temperature: {prediction.get('Predicted temperature (°C)')}")
+    st.write(f"Predicted Temperature (°C): {prediction.get('Predicted temperature (°C)')}")

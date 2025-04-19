@@ -9,7 +9,13 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Copy model file and application code
 COPY xgboost_regressor_time_modelv2.json .
-COPY . .
+
+COPY timedata.csv .
+#^ copy my dataset that I used to train the model 
+COPY shap_data.pkl . 
+
+COPY . . 
+#^ blanket copy of everything in the current directory
 
 EXPOSE 8080
 

@@ -1,7 +1,7 @@
 # 🌡️ Temperature Prediction App
 
 ![image](https://github.com/user-attachments/assets/40289bf9-9fd1-4ed4-8e0a-b92018f1616a)
-![image](https://github.com/user-attachments/assets/9a161c41-c812-4339-aded-69253450157a)
+
 
 This project predicts **local temperatures in Oshawa** using a regression-based **XGBoost model** trained on historical weather station data. The app provides both backend inference and a simple frontend for users to visualize predictions and trends.
 
@@ -22,6 +22,6 @@ This project predicts **local temperatures in Oshawa** using a regression-based 
 - **Deployment:** Docker, Google Cloud Run  
 
 ---
-
+![image](https://github.com/user-attachments/assets/9a161c41-c812-4339-aded-69253450157a)
 
 

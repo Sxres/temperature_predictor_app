@@ -7,7 +7,7 @@ This project predicts **local temperatures in Oshawa** using a regression-based 
 
 ---
 
-## 🚀 Features
+##  Features
 - Data preprocessing (cleaning, feature engineering, handling missing values).
 - Regression model using **XGBoost**, evaluated with **RMSE, MAE, and R²**.
 - Feature importance visualization with **SHAP** and time-series trend plots.
